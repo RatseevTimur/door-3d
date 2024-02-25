@@ -1,0 +1,39 @@
+{
+  "files": {
+    "main.css": "/door-3d/static/css/main.58e64f3a.css",
+    "main.js": "/door-3d/static/js/main.d75e0e28.js",
+    "static/css/874.11ee2526.chunk.css": "/door-3d/static/css/874.11ee2526.chunk.css",
+    "static/js/874.a1e82e9d.chunk.js": "/door-3d/static/js/874.a1e82e9d.chunk.js",
+    "static/css/912.11ee2526.chunk.css": "/door-3d/static/css/912.11ee2526.chunk.css",
+    "static/js/912.df33a4c7.chunk.js": "/door-3d/static/js/912.df33a4c7.chunk.js",
+    "static/css/481.11ee2526.chunk.css": "/door-3d/static/css/481.11ee2526.chunk.css",
+    "static/js/481.925be698.chunk.js": "/door-3d/static/js/481.925be698.chunk.js",
+    "static/js/453.33f395b2.chunk.js": "/door-3d/static/js/453.33f395b2.chunk.js",
+    "static/js/890.b754801d.chunk.js": "/door-3d/static/js/890.b754801d.chunk.js",
+    "static/js/285.41388879.chunk.js": "/door-3d/static/js/285.41388879.chunk.js",
+    "static/js/629.d6e3010b.chunk.js": "/door-3d/static/js/629.d6e3010b.chunk.js",
+    "static/media/primeicons.svg": "/door-3d/static/media/primeicons.e1441b135b3ca9ad643c.svg",
+    "static/media/primeicons.eot": "/door-3d/static/media/primeicons.d44157bdfa026dc877af.eot",
+    "static/media/primeicons.woff": "/door-3d/static/media/primeicons.10d3152104f2208ac82a.woff",
+    "static/media/primeicons.ttf": "/door-3d/static/media/primeicons.ea5358601d0a3fd6670b.ttf",
+    "static/media/primeicons.woff2": "/door-3d/static/media/primeicons.78172950b335ccdb94e2.woff2",
+    "static/media/color.png": "/door-3d/static/media/color.6441e63a57ccc5105bad.png",
+    "index.html": "/door-3d/index.html",
+    "main.58e64f3a.css.map": "/door-3d/static/css/main.58e64f3a.css.map",
+    "main.d75e0e28.js.map": "/door-3d/static/js/main.d75e0e28.js.map",
+    "874.11ee2526.chunk.css.map": "/door-3d/static/css/874.11ee2526.chunk.css.map",
+    "874.a1e82e9d.chunk.js.map": "/door-3d/static/js/874.a1e82e9d.chunk.js.map",
+    "912.11ee2526.chunk.css.map": "/door-3d/static/css/912.11ee2526.chunk.css.map",
+    "912.df33a4c7.chunk.js.map": "/door-3d/static/js/912.df33a4c7.chunk.js.map",
+    "481.11ee2526.chunk.css.map": "/door-3d/static/css/481.11ee2526.chunk.css.map",
+    "481.925be698.chunk.js.map": "/door-3d/static/js/481.925be698.chunk.js.map",
+    "453.33f395b2.chunk.js.map": "/door-3d/static/js/453.33f395b2.chunk.js.map",
+    "890.b754801d.chunk.js.map": "/door-3d/static/js/890.b754801d.chunk.js.map",
+    "285.41388879.chunk.js.map": "/door-3d/static/js/285.41388879.chunk.js.map",
+    "629.d6e3010b.chunk.js.map": "/door-3d/static/js/629.d6e3010b.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.58e64f3a.css",
+    "static/js/main.d75e0e28.js"
+  ]
+}
