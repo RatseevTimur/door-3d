@@ -1,0 +1,54 @@
+.textures-lists{
+    display: flex;
+    max-height: 400px;
+    min-height: 120px;
+    background-color: rgb(240, 240, 240);
+    flex-wrap: wrap;
+    border-radius: 20px;
+    justify-content: center;
+    overflow-y: auto;
+    padding: 10px;
+    margin: 5px;
+}
+
+.texture-item{
+    // width: 80px; 
+    // height: 80px;
+    // border-radius: 50%;
+    margin: 8px !important; 
+    width: 120px; 
+    height: 70px;
+    border-radius: 20px;
+    background-size: cover !important;
+    text-align: center;
+    cursor: pointer;
+    border: none !important;
+}
+
+.texture-item p{
+    color: rgb(54, 54, 54);
+    visibility: hidden;
+    background-color: rgba(245, 245, 245, 0.445);
+    max-height: 40px;
+
+    display: -webkit-box;
+    -webkit-line-clamp: 2; // количество строк
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.texture-item.active{
+    box-shadow: 2px 2px 12px black;
+
+    p{
+        visibility: visible;
+    }
+}
+
+.texture-item:hover{
+    box-shadow: 1px 1px 8px black;
+    p{
+        visibility: visible;
+    }
+}
+

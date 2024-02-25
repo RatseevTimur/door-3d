@@ -1,0 +1,16 @@
+.cls{
+    height: 30px;
+    width: 30px;
+    background: rgb(216, 216, 216);
+    border-radius: 100% 90% 0% 90%;
+    transform: rotate(45deg);
+    position: relative;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+}
+
+.cls:hover {
+    background: red;
+}

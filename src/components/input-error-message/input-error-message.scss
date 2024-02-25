@@ -1,0 +1,16 @@
+.input_error_message{
+    color: var(--red-600);
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: calc(100% + 0.5rem);
+    cursor: pointer;
+    height: 20px;
+    width: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    i{
+        padding: 0.7rem 0.2rem;
+    }
+}
