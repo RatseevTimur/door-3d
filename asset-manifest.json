@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/door-3d/static/css/main.58e64f3a.css",
-    "main.js": "/door-3d/static/js/main.e15f16c6.js",
+    "main.js": "/door-3d/static/js/main.b4471689.js",
     "static/css/874.11ee2526.chunk.css": "/door-3d/static/css/874.11ee2526.chunk.css",
     "static/js/874.e628157c.chunk.js": "/door-3d/static/js/874.e628157c.chunk.js",
     "static/css/912.11ee2526.chunk.css": "/door-3d/static/css/912.11ee2526.chunk.css",
@@ -20,7 +20,7 @@
     "static/media/color.png": "/door-3d/static/media/color.6441e63a57ccc5105bad.png",
     "index.html": "/door-3d/index.html",
     "main.58e64f3a.css.map": "/door-3d/static/css/main.58e64f3a.css.map",
-    "main.e15f16c6.js.map": "/door-3d/static/js/main.e15f16c6.js.map",
+    "main.b4471689.js.map": "/door-3d/static/js/main.b4471689.js.map",
     "874.11ee2526.chunk.css.map": "/door-3d/static/css/874.11ee2526.chunk.css.map",
     "874.e628157c.chunk.js.map": "/door-3d/static/js/874.e628157c.chunk.js.map",
     "912.11ee2526.chunk.css.map": "/door-3d/static/css/912.11ee2526.chunk.css.map",
@@ -34,6 +34,6 @@
   },
   "entrypoints": [
     "static/css/main.58e64f3a.css",
-    "static/js/main.e15f16c6.js"
+    "static/js/main.b4471689.js"
   ]
 }
