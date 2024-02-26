@@ -100,7 +100,7 @@ function Toolbar({ mesh, forma }) {
         <>
             {forma == 1 &&
                 <>
-                    <Button className="p-button-text" icon={(options) => <img src='/door.svg'></img>}
+                    <Button className="p-button-text" icon={(options) => <img src={`${process.env.PUBLIC_URL}/logo.svg`}></img>}
                         placeholder="Bottom" tooltip="вырез для котика" tooltipOptions={{ position: 'bottom' }}
                         onClick={() => setVisibleDialog(true)}
                     />

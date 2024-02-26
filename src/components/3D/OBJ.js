@@ -20,7 +20,7 @@ import { OBJLoader } from "three/examples/jsm/loaders/OBJLoader";
 
 const Rock = ({scaleValue}) => {
     let textureSelected = useSelector((state) => state.textureSelected)
-  const obj = useLoader(OBJLoader, "/door/10057_wooden_door_v3_iterations-2.obj");
+  const obj = useLoader(OBJLoader, `${process.env.PUBLIC_URL}/door/10057_wooden_door_v3_iterations-2.obj`);
 //const texture = useTexture("/door/10057_wooden_door_v1_diffuse.jpg");
   const texture = useTexture(textureSelected.url);
 

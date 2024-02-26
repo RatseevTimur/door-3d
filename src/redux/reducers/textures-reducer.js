@@ -7,7 +7,7 @@ export const textureActive = createSlice({
   initialState: {
     id: 1, 
     name:  'дерево 1',
-    url:  '/textures/wood-1.jpg',
+    url:  `${process.env.PUBLIC_URL}/textures/wood-1.jpg`,
   },
   reducers: {
     setTextureSelected: (state, action) => {

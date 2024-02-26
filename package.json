@@ -1,7 +1,7 @@
 {
   "name": "door",
   "version": "0.1.0",
-  "homepage": "https://RatseevTimur.github.io/door-3d",
+  "homepage": "https://ratseevtimur.github.io/door-3d",
   "private": true,
   "dependencies": {
     "@leva-ui/plugin-spring": "^0.9.18",

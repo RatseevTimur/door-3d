@@ -37,7 +37,7 @@ const Scene = ({ forma, mesh }) => {
     }, [boxSize])
 
     const textureMap = useLoader(TextureLoader, textureSelected.url)
-    const texturePlaneMap = useLoader(TextureLoader, '/textures/tile_texture3062.jpeg')
+    const texturePlaneMap = useLoader(TextureLoader, `${process.env.PUBLIC_URL}/textures/tile_texture3062.jpeg`)
     textureMap.wrapS = THREE.RepeatWrapping
     textureMap.wrapT = THREE.MirroredRepeatWrapping
    

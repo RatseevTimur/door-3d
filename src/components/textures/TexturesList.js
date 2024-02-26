@@ -9,9 +9,9 @@ import { textureAction } from "../../redux/actions/texture-action.js"
 import "./TexturesList.scss"
 
 export let texturesArray = [
-    { id: 1, name: 'дерево 1', url: '../textures/wood-1.jpg' },
-    { id: 2, name: 'дерево 2', url: '../textures/wood-2.jpg' },
-    { id: 3, name: 'дерево 3', url: '../textures/wood-3.jpg' },
+    { id: 1, name: 'дерево 1', url: `${process.env.PUBLIC_URL}/textures/wood-1.jpg` },
+    { id: 2, name: 'дерево 2', url: `${process.env.PUBLIC_URL}/textures/wood-2.jpg` },
+    { id: 3, name: 'дерево 3', url: `${process.env.PUBLIC_URL}/textures/wood-3.jpg` },
     { id: 4, name: 'Google', url: 'https://play-lh.googleusercontent.com/1-hPxafOxdYpYZEOKzNIkSP43HXCNftVJVttoo4ucl7rsMASXW3Xr6GlXURCubE1tA=w3840-h2160-rw' },
 ]
 

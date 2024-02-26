@@ -108,7 +108,7 @@ const Sink = (props) => {
         }
     }
 
-    let shemaCircle = '../icons/circle.svg'
+    let shemaCircle = `${process.env.PUBLIC_URL}/icons/circle.svg`
     let shemaDecal = useTexture(shemaCircle)
     
     if (visibleSink) return (

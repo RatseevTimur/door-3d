@@ -14,7 +14,7 @@ export function Model({ textureSelected, scaleValue }) {
     // return <primitive object={gltf.scene} />
 
     const groupRef = useRef()
-    const { nodes, materials } = useGLTF('/door-gltf/scene.gltf')
+    const { nodes, materials } = useGLTF(`${process.env.PUBLIC_URL}/door-gltf/scene.gltf`)
     const texture = useTexture(textureSelected.url);
     return (
         //   <group ref={groupRef} {...props} dispose={null}>
@@ -30,7 +30,7 @@ export function Model({ textureSelected, scaleValue }) {
     )
 }
 
-useGLTF.preload("/door-gltf/scene.gltf");
+useGLTF.preload(`${process.env.PUBLIC_URL}/door-gltf/scene.gltf`);
 
 const Scene = ({scaleValue}) => {
     let textureSelected = useSelector((state) => state.textureSelected)
