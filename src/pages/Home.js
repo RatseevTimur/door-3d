@@ -2,6 +2,9 @@ import React, { useEffect, useState, useRef, Suspense } from "react";
 import TexturesList from "../components/textures/TexturesList.js"
 import { Dropdown } from 'primereact/dropdown';
 import Toolbar from "../components/toolbar/Toolbar.js"
+import { TextureLoader } from 'three/src/loaders/TextureLoader'
+import { DoubleSide } from "three";
+import Model from '../components/3D/model.js'
 
 import {
   SoftShadows, Float, CameraControls, OrbitControls, Sky, AccumulativeShadows, RandomizedLight,
@@ -27,9 +30,10 @@ function Home() {
   const dispatch = useDispatch()
   const colorBackground = useSelector((state) => state.scene.colorBackground)
   // const { visible, colorBackground } = useSelector((state) => state.scene)
-  const [forma, setForma] = useState(1);
+  const texturePlaneMap = useLoader(TextureLoader, `${process.env.PUBLIC_URL}/textures/tile_texture3062.jpeg`)
+  const [forma, setForma] = useState(2);
   const formsCountertop = [
-    { name: 'Примитив', value: 1 },
+    // { name: 'Примитив', value: 1 },
     { name: 'GLTF', value: 2 },
     { name: 'OBJ', value: 3 }
   ];
@@ -91,13 +95,13 @@ function Home() {
           valueTemplate={selectedFormaTemplate} itemTemplate={formaOptionTemplate}
         />
 
-        {forma != 1 && 
-          <div className="card flex justify-content-center">
-            <Slider value={scaleValue} onChange={(e) => setScaleValue(e.value)} orientation="vertical" className="h-14rem"
-              step={0.01} min={0.01} max={0.2}
-            />
-          </div>
-        }
+       
+        <div className="card flex justify-content-center">
+          <Slider value={scaleValue} onChange={(e) => setScaleValue(e.value)} orientation="vertical" className="h-14rem"
+            step={0.01} min={0.01} max={0.2}
+          />
+        </div>
+       
           
       </div>
 
@@ -117,8 +121,8 @@ function Home() {
                 camera={{ position: [-5, -2, 10] }} width={"100%"} height={"100%"}>
                 <color attach="background" args={[`#${colorBackground}`]}
                 />
-                {/* <ambientLight intensity={1} /> */}
-               
+                <ambientLight intensity={.3} />
+                <Sky />
                 <OrbitControls makeDefault 
                   minAzimuthAngle={-Math.PI / 4}
                   maxAzimuthAngle={Math.PI / 4}
@@ -127,7 +131,13 @@ function Home() {
                 />
                 <directionalLight castShadow position={[5, 7, 5]} intensity={5} />
                 {/* <pointLight position={[5, 10, 5]} intensity={10} /> */}
-                <RenderForma />{/* Компонент отрисовки основной части столешницы */}
+                <RenderForma />
+                <Model/>
+                <mesh position={[0,-11, 0]} rotation={[Math.PI / 2, 0, 0]} 
+                scale={[100, 100, 1]} receiveShadow>
+                <planeBufferGeometry />
+                <meshPhongMaterial color="gray" map={texturePlaneMap} side={DoubleSide} />
+            </mesh>
 
               </Canvas>
             </div>

@@ -10,34 +10,30 @@ import { Canvas, useFrame, useLoader, useResource } from '@react-three/fiber'
 import { TextureLoader } from 'three/src/loaders/TextureLoader'
 import * as THREE from "three"
 import { Geometry, Base, Subtraction, Addition, Brush } from '@react-three/csg'
-import Model from './model.js'
 import Sink from './Sink.js'
 import EditSinkLayer from './EditSinkLayer.js'
 
 import { useSelector, useDispatch } from 'react-redux'
-import { setModelProperties, set_Prop_Box_forma } from "../../redux/reducers/model-properties.js";
-import { DoubleSide } from "three";
+
 
 import "./3D.scss"
 
-const Scene = ({ forma, mesh }) => {
+const Scene = ({ mesh, scaleValue }) => {
     let scale = 100
     let dispatch = useDispatch()
     const location = useLocation()
     let textureSelected = useSelector((state) => state.textureSelected)
-    let prop_Box_forma = useSelector((state) => state.modelProperties.prop_Box_forma)
+    let  prop_Box_forma ={
+        forma: 1,
+        heightAll: 2000,
+        widthAll: 800,
+        thickness: 40,
+        cuts: [],
+    }
     const { visible, colorBackground } = useSelector((state) => state.scene)
     const [boxSize, setBoxSize] = useState(prop_Box_forma);
 
-    useEffect(() => {
-        if (!location.pathname.includes('/save')) {
-            dispatch(set_Prop_Box_forma(boxSize))
-            dispatch(setModelProperties(boxSize))
-        }
-    }, [boxSize])
-
     const textureMap = useLoader(TextureLoader, textureSelected.url)
-    const texturePlaneMap = useLoader(TextureLoader, `${process.env.PUBLIC_URL}/textures/tile_texture3062.jpeg`)
     textureMap.wrapS = THREE.RepeatWrapping
     textureMap.wrapT = THREE.MirroredRepeatWrapping
    
@@ -59,7 +55,7 @@ const Scene = ({ forma, mesh }) => {
             >
                 <Geometry>
                     <Base /*rotation={[ 0, Math.PI / 2, 0]} position={[-0.35, 0.4, 0.4]} */>
-                        <boxGeometry attach="geometry" args={[boxSize.widthAll / 100, boxSize.heightAll / 100, boxSize.thickness / 100]} />
+                        <boxGeometry attach="geometry" args={[boxSize.widthAll / 100, boxSize.heightAll / 100, boxSize.thickness / 100]} scale={props.scaleValue}/>
                     </Base>
 
                     {/* <Subtraction rotation={[Math.PI / 2, 0, 0]} position={[0, 0, 0]}>
@@ -102,56 +98,9 @@ const Scene = ({ forma, mesh }) => {
         <>
         {textureSelected && 
         <>
+            <NewBox instanceMatrix={true} needsUpdate={true} scaleValue={scaleValue}/>
             
-            {visible &&
-                <>
-                    <Html transform /*occlude*/ zIndexRange={1}
-                        position={[-boxSize.widthAll / 200 - 2.5, 0, 0]} rotation={[0, 0, Math.PI / 2]}>
-                        <div className="p-inputgroup">
-                            {!location.pathname.includes('/save') ?
-                                <>
-                                    <span className="p-inputgroup-addon">mm</span>
-                                    <input value={boxSize.heightAll} placeholder="size, mm" style={{ width: "100px" }}
-                                        step={4} min={50} type='number'
-                                        onChange={(e) => setBoxSize({ ...boxSize, heightAll: +e.target.value })} />
-                                </>
-                                : <span className="p-inputgroup-addon">{boxSize.heightAll}</span>
-                            }
-
-                        </div>
-                        {/* <div className="cls"></div> */}
-                    </Html>
-
-                    <Html transform /*occlude*/ zIndexRange={1}
-                        position={[0, boxSize.heightAll / 200 + 2.5, 0]}>
-                        <div className="p-inputgroup">
-                            {!location.pathname.includes('/save') ?
-                                <>
-                                    <span className="p-inputgroup-addon">mm</span>
-                                    <input value={boxSize.widthAll} placeholder="size, mm" style={{ width: "100px" }}
-                                        step={4} min={50} type='number'
-                                        onChange={(e) => setBoxSize({ ...boxSize, widthAll: +e.target.value })} />
-                                </>
-                                : <span className="p-inputgroup-addon">{boxSize.widthAll}</span>
-                            }
-
-                        </div>
-                        {/* <DragButton boxSize={boxSize} setBoxSize={setBoxSize} /> */}
-                    </Html>
-
-                </>
-            }
-            
-            <Sky />
-            <NewBox instanceMatrix={true} needsUpdate={true} />
-            <Model/>
             <EditSinkLayer boxSize={boxSize} setBoxSize={setBoxSize} />
-
-            <mesh position={[0,-11, 0]} rotation={[Math.PI / 2, 0, 0]} 
-                scale={[100, 100, 1]} receiveShadow>
-                <planeBufferGeometry />
-                <meshPhongMaterial color="gray" map={texturePlaneMap} side={DoubleSide} />
-            </mesh>
 
             <GizmoHelper alignment="bottom-right" margin={[80, 80]}>
                 <GizmoViewport labelColor="white" axisHeadScale={1} />

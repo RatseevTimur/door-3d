@@ -1,6 +1,6 @@
 import React, { useRef, useState, useEffect, useMemo } from 'react'
 import { useLocation } from "react-router-dom";
-import { GizmoHelper, GizmoViewport, Html, useGLTF, useTexture } from "@react-three/drei"
+import { GizmoHelper, GizmoViewport, Html, useGLTF, useTexture, Environment } from "@react-three/drei"
 import { Canvas, useFrame, useLoader, useResource } from '@react-three/fiber'
 import { TextureLoader } from 'three/src/loaders/TextureLoader'
 import * as THREE from "three"
